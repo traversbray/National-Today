@@ -225,6 +225,7 @@
             .celebrate-post-block {
                 padding: 1em;
                 margin-bottom: 1em;
+                height: auto;
                 .post-block-container {
                     @include respond-to (handhelds) {
                         width: 100% !important;
@@ -252,7 +253,10 @@
                         }
                     }
                     .post-block-wrapper {
-                        
+                        max-width:300px;
+                        @include respond-to (handhelds) {
+                            max-width: 100%;
+                        }
                     }
                 }
             }
