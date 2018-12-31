@@ -97,7 +97,7 @@ get_header(); ?>
         </div> <!-- .container -->
     </section>
                
-    <section class="celebrate-section float-left">
+    <section class="celebrate-section float-left" id="celebrateSection">
         <div class="container">
             <h1>Celebrate</h1>
             
@@ -128,9 +128,9 @@ get_header(); ?>
                         ?>
                     
                         <div class="celebrate-post-block <?php foreach((get_the_category()) as $childcat) { if (cat_is_ancestor_of(27, $childcat)) {echo $childcat->cat_name ; }}?>" data-category=".<?php foreach((get_the_category()) as $childcat) { if (cat_is_ancestor_of(27, $childcat)) {echo $childcat->cat_name ; }}?>">
-                            <div id="post-<?php the_ID(); ?>" class="post-block-container">
+                            <div id="post-<?php the_ID(); ?>" class="post-block-container" >
                                 <div class="img-wrapper">
-                                    <img class="post-img" id="celebrateImage<? echo $inc_tmp;?>" src="<?php echo the_post_thumbnail_url(); ?>"/>
+                                    <img class="post-img" id="celebrateImage<?php echo $inc_tmp;?>" src="<?php echo the_post_thumbnail_url(); ?>"/>
                                     <div class="date-wrapper">
                                    <?php 
                                     
@@ -144,7 +144,7 @@ get_header(); ?>
                                     ?>
                                     </div>
                                 </div>
-                                    <div class="post-block-wrapper">
+                                    <div class="post-block-wrapper" >
                                     <h3><?php the_title();?></h3>
                                     <div class="post-info">
                                         <h6>Holiday:<span class="meta-grey"> <?php foreach((get_the_category()) as $childcat) { if (cat_is_ancestor_of(8, $childcat)) {echo $childcat->cat_name ; }}?></span></h6>
@@ -267,8 +267,65 @@ get_header(); ?>
 
 jQuery(document).ready(function($){
 
+    $('#celebrateSection').imagesLoaded( function() {
+  // images have loaded
+
+    // init Isotope JS
+    var $grid = $('.grid').isotope({
+    itemSelector: '.celebrate-post-block',
+    layoutMode: 'fitRows',
+    getSortData: {
+        name: '.name',
+        symbol: '.symbol',
+        number: '.number parseInt',
+        category: '[data-category]',
+        weight: function( itemElem ) {
+        var weight = $( itemElem ).find('.weight').text();
+        return parseFloat( weight.replace( /[\(\)]/g, '') );
+        }
+    }
+    });
 
 
+
+
+// filter functions
+var filterFns = {
+  // show if number is greater than 50
+  numberGreaterThan50: function() {
+    var number = $(this).find('.number').text();
+    return parseInt( number, 10 ) > 50;
+  },
+  // show if name ends with -ium
+  ium: function() {
+    var name = $(this).find('.name').text();
+    return name.match( /ium$/ );
+  }
+};
+
+// bind filter button click
+$('#filters').on( 'click', 'button', function() {
+  var filterValue = $( this ).attr('data-filter');
+  // use filterFn if matches value
+  filterValue = filterFns[ filterValue ] || filterValue;
+  $grid.isotope({ filter: filterValue });
+});
+
+$(window).load(function(){
+    console.log('everything loaded')
+    $grid.isotope({ filter: '*' });
+});
+
+// change is-checked class on buttons
+$('.button-group').each( function( i, buttonGroup ) {
+  var $buttonGroup = $( buttonGroup );
+  $buttonGroup.on( 'click', 'button', function() {
+    $buttonGroup.find('.is-checked').removeClass('is-checked');
+    $( this ).addClass('is-checked');
+  });
+});
+
+});
 });
 
 // Hero Slide functionality
@@ -299,6 +356,11 @@ let slideIndex = 1;
       
   }
 
+
+
+
+
+
    //set block container max-width to size of post image
 
 const celebrateBlock = document.getElementsByClassName('post-block-container');
@@ -309,9 +371,9 @@ let imgWidth;
 
 
 for ( i =0, l = 1; i < celebrateBlock.length; i++, l++) {
-    celebrateImg = 'celebrateImage' + (i + 1);
-    imgWidth = document.getElementById(celebrateImg).offsetWidth;
-    celebrateBlock[i].style.width = imgWidth + "px";
+    // celebrateImg = 'celebrateImage' + (i + 1);
+    // imgWidth = document.getElementById(celebrateImg).offsetWidth;
+    // celebrateBlock[i].style.width = imgWidth + "px";
 }
 
     // reformat Day string for celebrate section
@@ -362,5 +424,6 @@ for (let i = 0; i < celebrateMonth.length; i++) {
         celebrateMonth[i].innerHTML = "Nov " + monthDay;
     }
 }
+
 
 </script>
