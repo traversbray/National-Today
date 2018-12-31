@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>Previous</title>
+    <desc>Created with Sketch.</desc>
+    <g id="National-Today-Holiday" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="National-Today---Homepage" transform="translate(-972.000000, -305.000000)">
+            <g id="Section---Feature" transform="translate(101.000000, 100.000000)">
+                <g id="Block">
+                    <g id="Previous" transform="translate(897.000000, 231.000000) scale(-1, 1) translate(-897.000000, -231.000000) translate(872.000000, 206.000000)">
+                        <g id="Arrow" transform="translate(19.000000, 13.000000)" fill="#0AC6E9">
+                            <path d="M0.6505,13.2373714 C0.129833333,12.7018286 0.129833333,11.8337143 0.6505,11.2974857 L10.9191667,0.735428571 C11.1798333,0.468 11.6018333,0.468 11.8618333,0.735428571 L12.8045,1.70502857 C13.0651667,1.97314286 13.0651667,2.4072 12.8045,2.67462857 L3.94983333,11.7822857 C3.68983333,12.0504 3.68983333,12.4844571 3.94983333,12.7525714 L12.8045,21.8602286 C13.0651667,22.1276571 13.0651667,22.5617143 12.8045,22.8298286 L11.8618333,23.7994286 C11.6018333,24.0668571 11.1798333,24.0668571 10.9191667,23.7994286 L0.6505,13.2373714 Z" transform="translate(6.630000, 12.267429) scale(-1, -1) translate(-6.630000, -12.267429) "></path>
+                        </g>
+                        <circle id="Oval" stroke="#0AC6E9" cx="25" cy="25" r="25"></circle>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

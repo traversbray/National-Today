@@ -1,0 +1,395 @@
+#pageHome {
+    
+    .float-left {
+        float:left;
+        width:100%;
+    }
+    .float-right {
+        float:right;
+    }
+    .meta-red {
+        color:#F33F33;
+    }
+    .meta-grey {
+        font-family: 'Montserrat-Medium';
+        color:#A5A5A5
+    }
+    .hero-section {
+        max-height: 690px;
+        @include respond-to(handhelds) {
+           max-height:100%;
+        }
+        @include respond-to(medium-screens) {
+            max-height:100%;
+         }
+        .section-wrapper {
+           
+            .post-wrapper {
+            margin-bottom:10em;
+            @include respond-to (handhelds) {
+                margin-bottom:2em;
+            }
+            @include respond-to (medium-screens) {
+                margin-bottom:2em;
+            }
+            .post-block {display:none;}
+
+                .upper-post-wrapper {
+                    display: flex;
+                    padding:0;
+                    @include respond-to(handhelds) {
+                        display:block;
+                    }
+                    .img-wrapper {
+                        height:400px;
+                        background-size:cover;
+                        @include respond-to (medium-screens) {
+                            width: 100%;
+                        }
+                        .date-wrapper {
+                            position: absolute;
+                            top: 45px;
+                            left: 0;
+                            background: #F33F33;
+                            color: #fff;
+                            padding: 6px 10px;
+                            text-transform: uppercase;
+                            .celebrate-Day {
+                                font-family: 'Montserrat-Bold';
+                                font-size:12px;
+                            }
+                            .celebrate-Month {
+                                font-family: 'Montserrat-Bold';
+                                font-size:18px;
+                            }
+                        }
+                    }
+                    .control-flex {
+                        display: flex;
+                        align-items: center;
+                        align-content: center;
+                        padding-bottom: 3em;
+                        @include respond-to (handhelds) {
+                            padding:0;
+                            position: absolute;
+                            bottom: -40px;
+                            right: 0;
+                            z-index: 5;
+                        }
+                        .control-wrapper {
+                            @include respond-to (handhelds) {
+                                display: flex;
+                                flex-direction: row-reverse;
+                                background:#fff;
+                            }
+                            .next-btn-wrapper {
+                                background-image:url('/wp-content/themes/Nation-Day/img/Next.svg');
+                                background-size:cover;
+                                width:52px;
+                                height:52px;
+                                margin: 15px 10px;
+                                .next-btn {
+                                    width: 100%;
+                                    height: 100%;
+                                    float: left;
+                                    cursor: pointer;
+                                }
+                            }
+                            .prev-btn-wrapper {
+                                background-image:url('/wp-content/themes/Nation-Day/img/Previous.svg');
+                                background-size:cover;
+                                width:52px;
+                                height:52px;
+                                margin: 15px 10px;
+                                .prev-btn {
+                                    width: 100%;
+                                    height: 100%;
+                                    float: left;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                        
+                    }
+                }
+                .lower-post-wrapper {
+                    flex-direction: row-reverse;
+                    display: flex;
+                    margin-top: -6em;
+                    padding:0;
+                    @include respond-to (handhelds) {
+                        margin-top:0;
+                        background:#fff;
+                        float: left;
+                        width: 100%;
+                        flex-direction: column-reverse;
+                    }
+                    @include respond-to(medium-screens) {
+                       margin-top:0;
+                     }
+                    .post-content-wrapper {
+                        background-color:#F7F8F9;
+                        padding: 3em 4em 4em;
+                        .read-more-wrapper {
+                            margin-top:20px;
+                            .read-more{
+                                font-family: 'Montserrat-Regular';
+                                color:#F33F33;
+                                text-transform:uppercase;
+                               
+                            }
+                        }
+                        
+                    }
+                    .up-next {
+                        padding: 0 2em;
+                        margin: 0 15px;
+                        border-top: 3px solid #E3E3E3;
+                        border-bottom: 3px solid #E3E3E3;
+                        display: flex;
+                        align-items: center;
+                        @include respond-to (handhelds) {
+                            border-top:none;
+                        }
+                        .up-next-wrapper {
+                            .next-thumbnail-img {
+                                margin-bottom: 1em;
+                                height: 90px;
+                                width: 220px;
+                                background-size: cover;
+                                background-position-x: 50%;
+                                background-repeat: no-repeat;
+                            }
+                            .next-header {
+                                color:#0AC6E9;
+                                font-size: 22px;
+                                font-family: 'Montserrat-Bold';
+                            }
+                            img {
+                                margin-bottom:15px;
+                                max-height: 150px;
+                            }
+                        }
+                    }
+                    
+                }   
+            }
+        }
+    }
+    .celebrate-section {
+        padding: 3em;
+        @include respond-to (handhelds) {
+            padding:0 0 4em
+        }
+        @include respond-to (medium-screens) {
+            padding: 1em;
+        }
+        h1 {
+            padding-left: 2em;
+            @include respond-to (handhelds) {
+                padding-left: 15px;
+            }
+        }
+        h2 {
+            max-width: 250px;
+            line-height: 38px;
+            @include respond-to (handhelds) {
+                max-width: 100%;
+                padding: 15px !important;
+                margin-bottom:10px !important;
+            }
+        }
+        #filters {
+            .filter-wrapper {
+                text-align: right;
+                margin-bottom: 1em;
+                @include respond-to (handhelds) {
+                    text-align: left;
+                    padding-top: 2em;
+                    padding-left: 15px;
+                    margin-bottom:0;
+                }
+                .filter-btn {
+                    font-family: 'Montserrat-Medium';
+                    color:#A5A5A5;
+                    background:transparent;
+                    border:none;
+                    outline:none;
+                    text-transform: uppercase;
+                }
+            }
+        }
+        .grid {
+            border-bottom: 3px solid #E3E3E3;
+            padding-bottom: 3em;
+            .celebrate-post-block {
+                padding: 1em;
+                margin-bottom: 1em;
+                .post-block-container {
+                    @include respond-to (handhelds) {
+                        width: 100% !important;
+                    }
+                    .date-wrapper {
+                        position: absolute;
+                        top: 14px;
+                        left: 14px;
+                        background: #F33F33;
+                        color: #fff;
+                        padding: 6px 10px;
+                        text-transform: uppercase;
+                        .celebrate-Day {
+                            font-family: 'Montserrat-Bold';
+                            font-size:12px;
+                        }
+                        .celebrate-Month {
+                            font-family: 'Montserrat-Bold';
+                            font-size:18px;
+                        }
+                    }
+                    .post-img {
+                        @include respond-to (handhelds) {
+                            width: 100%;
+                        }
+                    }
+                    .post-block-wrapper {
+                        
+                    }
+                }
+            }
+           
+           
+        }
+     
+    }
+    .news-section {
+        padding: 3em 3em 6em;
+        background-color: #F7F8F9;
+        @include respond-to (handhelds) {
+            padding:3em 15px 6em;
+        }
+        @include respond-to (medium-screens) {
+            padding: 1em;
+        }
+        .container {
+            max-width:1200px;
+        }
+        .section-wrapper {
+            float: left;
+            padding-bottom: 1em;
+            border-bottom: 3px solid #E3E3E3;
+            h1 {
+                text-align:center;
+                @include respond-to (handhelds) {
+                    text-align: left;
+                }
+            }
+            h2 {
+                text-align: center;
+                max-width: 750px;
+                padding: 2em 0;
+                margin: auto;  
+                @include respond-to (handhelds) {
+                    text-align: left;
+                }
+            }
+            .grid-wrapper {
+                .news-post-block {
+                    margin: 1.2em 0;
+                    @include respond-to (handhelds) {
+                        text-align: left;
+                        padding:0;
+                    }
+                    @include respond-to (medium-screens) {
+                        max-width: 450px;
+                        margin: auto;
+                        margin-bottom: 3em;
+                    }
+                    .news-block-container {
+                        background-color:#ffffff;
+                        padding: 0;
+                        min-height: 470px;
+                        -webkit-box-shadow: 0px 2px 23px 0px rgba(229,229,229,0.5);
+                        -moz-box-shadow: 0px 2px 23px 0px rgba(229,229,229,0.5);
+                        box-shadow: 0px 2px 23px 0px rgba(229,229,229,0.5);
+                    
+                    }
+                    .post-img {
+                        height:200px;
+                        width: 100%;
+                        background-size:cover;
+                        background-repeat: no-repeat;
+                       
+                    }
+                    .post-block-wrapper {
+
+                        padding:1em 1.5em 3em;
+                        
+                        h4 {
+                            min-height: 40px;
+                        }
+                        .post-info {
+                            padding: 10px 0;
+                        }
+                        .post-excerpt {
+                            padding: 10px 0;
+                        }
+                        .tags-wrapper {
+                            position: absolute;
+                            bottom: 20px;
+                            left: 35px;
+                            @include respond-to (handhelds) {
+                                left: 20px;
+                            }
+                                
+                           
+                            span {
+                                
+                                
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+    .see-all-wrapper {
+        float: left;
+        width: 100%;
+        
+        h6 {
+            text-align: right;
+            text-transform: uppercase;
+        }
+    }
+}
+
+/* ---- isotope ---- */
+
+.grid {
+ 
+  }
+  
+  /* clear fix */
+  .grid:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  
+ 
+  
+  // Masonry Styles
+  .grid-item {
+    float: left;
+    width: 100px;
+    height: 100px;
+    background: #0D8;
+    border: 2px solid #333;
+    border-color: hsla(0, 0%, 0%, 0.7);
+  }
+  
+  .grid-item--width { width: 300px; }
+  .grid-item--width2 { width: 400px; }
+  .grid-item--height2 { height: 400px; }

@@ -1,0 +1,139 @@
+
+header#masthead{
+
+	background-color: #fff;
+	border-color: #fff;
+	padding: 2em 0;
+	@include respond-to (handhelds) {
+		padding: 15px;
+	}
+	//menu frame
+	nav.navbar{
+		display: flex;
+    	border: 0;
+		margin-bottom:0;
+		background-color:transparent;
+		.container {
+			@include respond-to (handhelds) {
+				width: 100%;
+			}
+		}
+		.nav-logo {
+			float: left;
+			width: 20%;
+			display: flex;
+			align-items: center;
+			align-content: center;
+			@include respond-to (handhelds) {
+				width: auto;
+			}
+			@include respond-to(medium-screens) {
+				float: none;
+				width: 20%;
+				display: block;
+				
+				margin: auto;
+			}
+		}
+		.nav-list {
+			float: right;
+			display: flex;
+			align-items: center;
+			align-content: center;
+			font-family: 'Montserrat-SemiBold';
+			#menu-item-7 {
+				@include respond-to (handhelds) {
+					display:none;
+				}
+			}
+			#bs-example-navbar-collapse-1 {
+				@include respond-to (medium-screens) {
+					margin: auto;
+				}
+			}
+			@include respond-to (medium-screens) {
+				width: 100%;
+			}
+			li {
+				float: left;
+				padding: 0 5px;
+				.fa-angle-down {
+					font-size: 32px;
+					bottom: 6px;
+					margin-left: 10px;
+					position: relative;
+				}
+				a {
+					color:#33244A;
+					text-transform:uppercase;
+					display: flex;
+					padding: 10px;
+					text-transform: uppercase;
+					cursor: pointer;
+				}
+				
+			}
+			#menu-item-6 {
+				a {
+					color:#F33F33;
+				}
+				
+			}
+		}
+#mobileProfile {
+	display:none;
+	@include respond-to (handhelds) {
+		float: right;
+		flex-direction: row;
+		padding-top: 15px;
+		width: 50px;
+		display: flex;
+	}
+	a {
+		@include respond-to (handhelds) {
+		margin-left: 15px;
+		}
+	}
+}
+		//left logo
+		a.navbar-brand{
+			background-image: url('/wp-content/themes/Nation-Day/img/site-logo.png');
+		    background-size: contain;
+		    background-repeat-x: no-repeat;
+			width: 100px;
+			margin-left: 10px;
+			padding: 0;
+			background-repeat: no-repeat;
+			background-position: 50%;
+			@include respond-to (handhelds) {
+				margin-left:0;
+				margin:auto;
+			}
+			@include respond-to (medium-screens) {
+				margin-left:0;
+				margin:auto;
+			}
+		}
+
+
+		
+	}
+}
+.dropdown-menu {
+	li {
+		width: 100%;
+		@include respond-to (handhelds) {
+			width: auto;
+		}
+	}
+}
+.navbar-toggle {
+	margin-right:0!important;
+	background: transparent;
+	border: none;
+	.icon-bar {
+		background-color:#18324F !important;
+		height: 3px !important;
+	}
+}
+
